@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abaya Dubai</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- FontAwesome for WhatsApp and Instagram icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #b65bb6;
+            --bg: #010101;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-decoration: none;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: var(--bg);
+            color: #010101;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 4rem 7%; /* Fixed padding */
+            background-color: rgba(1, 1, 1, 0.8); /* Fixed background color */
+            border-bottom: 2px solid #010101;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+        }
+
+        .navbar .navbar-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            font-style: italic;
+        }
+
+        .navbar .navbar-logo span {
+            color: var(--primary);
+        }
+
+        .navbar-nav a {
+            margin: 0 1rem;
+            color: #fff;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        .navbar-extra a {
+            margin: 0 1rem;
+            color: #fff;
+        }
+
+        /* Produk */
+        .products {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 8rem;
+            padding: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+            margin-bottom: 2rem;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .product-card h3 {
+            color: var(--primary);
+            padding: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .product-card p {
+            padding: 0 1rem 1rem;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .product-card a {
+            display: inline-block;
+            padding: 1rem;
+            background-color: var(--primary);
+            color: #fff;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .product-card a:hover {
+            background-color: #9e49c1;
+        }
+
+        /* Pembayaran Info */
+        .payment-info {
+            background-color: #fff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-info h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .payment-info p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .payment-info a {
+            display: inline-block;
+            padding: 1rem;
+            background-color: #25D366; /* WhatsApp Green */
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            text-align: center;
+            width: auto;
+        }
+
+        .payment-info a:hover {
+            background-color: #128C7E;
+        }
+
+        /* Icon for WhatsApp and Instagram */
+        .payment-info .social-icons {
+            margin-top: 1rem;
+        }
+
+        .payment-info .social-icons a {
+            font-size: 2rem;
+            margin: 0 1rem;
+            color: #010101;
+        }
+
+        .payment-info .social-icons a:hover {
+            color: var(--primary);
+        }
+
+        /* Cart */
+        #cart {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            display: none;
+            max-width: 300px;
+        }
+
+        #cart ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #cart ul li {
+            margin-bottom: 1rem;
+        }
+
+        #cart .total {
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        #cart button {
+            padding: 1rem;
+            background-color: var(--primary);
+            color: #fff;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #cart button:hover {
+            background-color: #9e49c1;
+        }
+    </style>
+
+    <!-- JSON-LD structured data for the person -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Siti Khoirunisa Kamelia",
+        "identifier": "23050852",
+        "affiliation": {
+            "@type": "EducationalOrganization",
+            "name": "Universitas Yatsi Madani",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Jl. Aria Santika No. 40, Karawaci",
+                "addressLocality": "Banten",
+                "postalCode": "15114"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+62 21 55726558",
+                "contactType": "administrative"
+            }
+        },
+        "alumniOf": "Ilkom Malam C",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http://universitas-yatsi-madani.ac.id"
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Navbar start -->
+    <nav class="navbar">
+        <a href="#" class="navbar-logo">Abaya<span>Dubai</span></a>
+
+        <div class="navbar-nav">
+            <a href="#about">Tentang Kami</a>
+            <a href="#menu">Menu</a>
+            <a href="#contact">Kontak</a>
+            <a href="https://www.instagram.com">Instagram</a>
+        </div>
+
+        <div class="navbar-extra">
+            <a href="#" id="search"><i data-feather="search"></i></a>
+            <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
+            <a href="#" id="abaya-menu"><i data-feather="menu"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar end -->
+
+    <!-- Produk Section -->
+    <section id="products" class="products">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <img src="https://png.pngtree.com/png-vector/20240624/ourlarge/pngtree-d-new-arrival-chiffon-pleated-dress-ramadan-islamic-clothing-dubai-abayas-png-image_12834981.png" alt="Abaya Dubai 1">
+            <h3>Chiffon Pleated Abaya</h3>
+            <p>Stylish and comfortable chiffon pleated abaya for Ramadan and everyday wear. Perfect for Islamic clothing.</p>
+            <p class="price">IDR 850,000</p>
+            <a href="#">Beli Sekarang</a>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+            <img src="https://i0.wp.com/reviewae.com/wp-content/uploads/2023/03/Affordable-Abaya-Dubai-Main-Picture-3.png?resize=614%2C675&ssl=1" alt="Abaya Dubai 2">
+            <h3>Affordable Abaya</h3>
+            <p>A stylish and affordable abaya for daily wear in Dubai. Elegant and simple, designed for comfort.</p>
+            <p class="price">IDR 650,000</p>
+            <a href="#">Beli Sekarang</a>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card">
+            <img src="http://abayah.in/wp-content/uploads/2023/10/339705560_190387907180044_5852049126679418792_n.jpg" alt="Abaya Dubai 4">
+            <h3>Dubai Black Abaya</h3>
+            <p>A classic black abaya from Dubai, designed with elegance and comfort in mind, ideal for daily wear.</p>
+            <p class="price">IDR 1,200,000</p>
+            <a href="#">Beli Sekarang</a>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product-card">
+            <img src="https://s.alicdn.com/%40sc04/kf/H3153cb448fff44eaad22cca47edc8e73k.jpg_720x720q50.jpg" alt="Abaya Dubai 5">
+            <h3>Plus Size Muslim Robe</h3>
+            <p>A beautiful plus-size Muslim robe, perfect for modest wear with a flattering fit for all sizes.</p>
+            <p class="price">IDR 1,150,000</p>
+            <a href="#">Beli Sekarang</a>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product-card">
+            <img src="http://designerburqastore.in/cdn/shop/files/Screenshot-20240116-202721.png?v=1705417069" alt="Al Noor Abaya">
+            <h3>Al Noor Abaya</h3>
+            <p>Imported fabric abaya with beautiful embroidery. Perfect for special occasions or everyday use.</p>
+            <p class="price">IDR 1,500,000</p>
+            <a href="#">Beli Sekarang</a>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product-card">
+            <img src="http://designerburqastore.in/cdn/shop/files/Screenshot-20241114-110913.png?v=1731563075" alt="Dubai Floral Print Abaya">
+            <h3>Dubai Floral Print Abaya</h3>
+            <p>Floral printed Dubai special abaya with a 2-piece shrug. Perfect for summer days or occasions.</p>
+            <p class="price">IDR 950,000</p>
+            <a href="#">Beli Sekarang</a>
+        </div>
+
+        <!-- New Product 1 -->
+<div class="product-card">
+    <img src="https://down-id.img.susercontent.com/file/sg-11134201-7rbld-ln10sxflph1n32" alt="Abaya Dubai 8">
+    <h3>Elegant Pleated Abaya</h3>
+    <p>Luxurious pleated abaya for formal events, crafted with fine fabric to ensure comfort and style.</p>
+    <p class="price">IDR 1,350,000</p>
+    <a href="#">Beli Sekarang</a>
+</div>
+
+<!-- New Product 2 -->
+<div class="product-card">
+    <img src="https://th.bing.com/th/id/OIP.pfHC8HLOsxo47FKM71uqNAHaHc?rs=1&pid=ImgDetMain" alt="Abaya Dubai 9">
+    <h3>Chic Dubai Abaya</h3>
+    <p>Trendy and sophisticated Dubai abaya, perfect for casual wear or special occasions.</p>
+    <p class="price">IDR 950,000</p>
+    <a href="#">Beli Sekarang</a>
+</div>
+<!-- New Product 3 -->
+<div class="product-card">
+    <img src="https://th.bing.com/th/id/OIP.h726vEe_0SDicQgsj9ZEkgAAAA?w=474&h=474&rs=1&pid=ImgDetMain" alt="Abaya Dubai 10">
+    <h3>Classic Black Abaya</h3>
+    <p>Timeless black abaya for all occasions, offering a simple yet elegant look for every woman.</p>
+    <p class="price">IDR 1,200,000</p>
+    <a href="#">Beli Sekarang</a>
+</div>
+
+    </section>
+
+    <!-- Pembayaran Info Section -->
+<section class="payment-info">
+    <h2>Contact Us for Orders</h2>
+    <p>For inquiries or to make a purchase, reach out to us via WhatsApp below:</p>
+    <a href="https://wa.me/6281234567890" target="_blank">Contact Us on WhatsApp</a>
+    <div class="social-icons">
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/6281234567890" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <div class="store-address">
+        <h3>Store Address:</h3>
+        <p>Kp. Kayu Putih RT/RW 006/002, Desa Rawa Boni, Kec. Pakuhaji, Kab. Tangerang</p>
+    </div>
+</section>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+
+</html>
